@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0;
+        height: 100%;
+      }
+      html {
+        height: 100%;
+      }
+      iframe#main {
+        width: 100%;
+        height: 100%;
+        display: block;
+        border: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <script src="https://client.airkit.com/websdk/1.0/airkit_sdk.js"></script>
+  <script>
+    const chatConfig =
+    {
+        "iframeConfig":
+        {
+            "style":
+            {
+                "width": "100%",
+                "height": "516px",
+                "border": "0px"
+            }
+        },
+        "renderMode": "popup",
+        "renderConfig":
+        {
+            "button":
+            {
+                "openIconSrc": "https://raw.githubusercontent.com/ankitchaudhariairkit01/airkit_test/4516c266b4d7d608df3716af6e6ec41796f4a94c/faherty_chat_close_icon.svg",
+                "closeIconSrc": "https://raw.githubusercontent.com/ankitchaudhariairkit01/airkit_test/main/faherty_chat_icon.svg",
+                "buttonStyle":
+                {
+                    "width": "48px",
+                    "height": "48px"
+                }
+            }
+        },
+        "widgetUrl": "https://app.ffb.com/chat?noHeader=true",
+        "headerConfig":
+        {
+            "logo":
+            {
+                "src": "ffb.png",
+                "style":
+                {
+                    "height": "24px"
+                }
+            },
+            "headerStyle":
+            {
+                "backgroundColor": "#2A73A8"
+            },
+            "trademarkBoxStyle":
+            {
+                "flexGrow": "1"
+            },
+            "close":
+            {
+                "hoverColor": "#da382d"
+            }
+        },
+        "sdkUrl": "https://client.airkit.com/websdk/1.0/airkit_sdk.js",
+        "instanceId": "ffb-airkit-chat"
+    }
+    const widgetSDK = new window.AirkitWebSDK(chatConfig);
+    widgetSDK.render
+      ({
+      url: `${chatConfig.widgetUrl}`
+    }); 
+  </script>
+</body>
+</html>
